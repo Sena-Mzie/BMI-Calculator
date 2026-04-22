@@ -62,6 +62,7 @@ public static void main(String[] args){
 public static double getValidInput(Scanner sc, String prompt, double min, double max){
 	double value; 
 
+	//while loop for ensuring valid input from user
 	while(true){
 		System.out.println(prompt);
 		if(sc.hasNextDouble()){
