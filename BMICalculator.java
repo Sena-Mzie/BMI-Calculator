@@ -31,6 +31,15 @@ public static void main(String[] args){
 
 }
 
+//method to get unit choice
+ public static int getUnitChoice(Scanner sc){
+	int choice;
+
+	while(true){
+		System.out.println("");
+	}
+ }
+
 //method to get valid input from user
 public static double getValidInput(Scanner sc, String prompt, double min, double max){
 	double value; 
