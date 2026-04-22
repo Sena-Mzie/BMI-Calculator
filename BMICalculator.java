@@ -42,6 +42,7 @@ public static void main(String[] args){
 				+ "2. Imperial (lbs , in)\n"
 				+ "Please select either option 1 or option 2");
 		
+		//nested if-statement for ensuring valid input
 		if(sc.hasNextInt()){
 			choice = sc.hasNextInt();
 			if(choice == 1 || choice == 2){
