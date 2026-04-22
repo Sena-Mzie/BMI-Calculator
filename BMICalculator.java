@@ -31,6 +31,7 @@ public static void main(String[] args){
 
 }
 
+//method to get valid input from user
 public static double getValidInput(Scanner sc, String prompt, double min, double max){
 	double value; 
 
@@ -49,6 +50,15 @@ public static double getValidInput(Scanner sc, String prompt, double min, double
 		}
 	}
 	return value;
+}
+
+//method to calculate BMI
+public static double calculateBMI(int unitChoice, double weight, double height){
+	double totalBMI;
+
+	if (unitChoice == 1){
+		totalBMI = weight / (height * height);
+	} 
 }
 
 }
