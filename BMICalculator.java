@@ -31,13 +31,30 @@ public static void main(String[] args){
 
 }
 
-//method to get unit choice
+//method to get unit choice, Metric/Imperial
  public static int getUnitChoice(Scanner sc){
 	int choice;
 
+	//while loop for selecting unit option
 	while(true){
-		System.out.println("");
+		System.out.println("Select a preferred unit: \new"
+		        + "1. Metric (kg, m)\n"
+				+ "2. Imperial (lbs , in)\n"
+				+ "Please select either option 1 or option 2");
+		
+		if(sc.hasNextInt()){
+			choice = sc.hasNextInt();
+			if(choice == 1 || choice == 2){
+				break;
+			} else{
+				System.out.println("Invalid choice. Please enter either 1 or 2");
+			}
+		} else{
+			System.out.println("Invalid choice. Please enter a number(1 or 2)");
+			sc.next();
+		}
 	}
+	return choice;
  }
 
 //method to get valid input from user
