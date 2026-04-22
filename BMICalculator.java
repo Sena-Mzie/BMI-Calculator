@@ -28,6 +28,27 @@ public static void main(String[] args){
 	System.out.print();
 
 	} while(repeat == 'Y' || repeat == 'y');
+
+}
+
+public static double getValidInput(Scanner sc, String prompt, double min, double max){
+	double value; 
+
+	while(true){
+		System.out.println(prompt);
+		if(sc.hasNextDouble()){
+			value = sc.nextDouble();
+			if(value>= min && value <= max){
+				break;
+			} else {
+				System.out.println("Please enter the value between %.1f and %.1f. \n" min, max);
+				}
+		} else{
+			System.out.println("Invalid input. Please enter a value");
+			sc.next();
+		}
+	}
+	return value;
 }
 
 }
