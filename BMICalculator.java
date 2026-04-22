@@ -23,6 +23,7 @@ public static void main(String[] args){
 		            : getValidInput(sc, "Enter your height in inches: ", 20, 100);
 		
 		double bmi = calculateBMI(unitChoice, weight, height);
+		System.out.print("Your BMI is " + bmi);
 
 	//repeat = askToRepeat(sc);
 	System.out.print();
