@@ -86,7 +86,10 @@ public static double calculateBMI(int unitChoice, double weight, double height){
 
 	if (unitChoice == 1){
 		totalBMI = weight / (height * height);
-	} 
+	} else{
+		totalBMI = (703 * weight) / (height / height);
+	}
+	return totalBMI;
 }
 
 }
