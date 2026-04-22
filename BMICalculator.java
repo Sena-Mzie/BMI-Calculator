@@ -9,7 +9,7 @@ public class BMICalculator{
 public static void main(String[] args){
 	//creating Scanner Object
 	Scanner sc = new Scanner(System.in);
-	Scanner.useLocale(Locale.US);
+	sc.useLocale(Locale.US);
 	
 	char repeat = 0;
 
@@ -26,7 +26,7 @@ public static void main(String[] args){
 		System.out.print("Your BMI is " + bmi);
 
 	//repeat = askToRepeat(sc);
-	System.out.print();
+	//System.out.print();
 
 	} while(repeat == 'Y' || repeat == 'y');
 
@@ -45,7 +45,7 @@ public static void main(String[] args){
 		
 		//nested if-statement for ensuring valid input
 		if(sc.hasNextInt()){
-			choice = sc.hasNextInt();
+			choice = sc.nextInt();
 			if(choice == 1 || choice == 2){
 				break;
 			} else{
@@ -71,7 +71,7 @@ public static double getValidInput(Scanner sc, String prompt, double min, double
 			if(value>= min && value <= max){
 				break;
 			} else {
-				System.out.println("Please enter the value between %.1f and %.1f. \n" min, max);
+				System.out.println("Please enter the value between %.1f and %.1f. \n", min, max);
 				}
 		} else{
 			System.out.println("Invalid input. Please enter a value");
