@@ -71,7 +71,7 @@ public static double getValidInput(Scanner sc, String prompt, double min, double
 			if(value>= min && value <= max){
 				break;
 			} else {
-				System.out.println("Please enter the value between %.1f and %.1f. \n", min, max);
+				System.out.printf("Please enter the value between %.1f and %.1f. \n", min, max);
 				}
 		} else{
 			System.out.println("Invalid input. Please enter a value");
@@ -92,5 +92,19 @@ public static double calculateBMI(int unitChoice, double weight, double height){
 	}
 	return totalBMI;
 }
+
+//method to print BMI category
+public static void printBMICategory(double bmi){
+    if(bmi < 18.5){
+        System.out.println(" (Underweight)");
+    } else if(bmi < 25 & bmi > 18.5){
+        System.out.println(" (Normal weight)");
+    } else if(bmi < 30 & bmi > 25){
+        System.out.println(" (Overweight)");
+    } else{
+        System.out.println(" (Obese)");
+    }
+}
+
 
 }
