@@ -13,6 +13,15 @@ public static void main(String[] args){
 	
 	char repeat = 0;
 
+	//Header (new)
+    System.out.println("\n==============================");
+    System.out.println("       BMI CALCULATOR         ");
+    System.out.println("==============================");
+
+   //Disclaimer (new)
+   System.out.println("Note: BMI is a general guideline and may not account for muscle mass, age, or gender.");
+
+
 	do{
 		int unitChoice = getUnitChoice(sc);
 
@@ -93,7 +102,7 @@ public static double calculateBMI(int unitChoice, double weight, double height){
 	return totalBMI;
 }
 
-//method to print BMI category
+//method to print BMI category (as per guidlines)
 public static void printBMICategory(double bmi){
     if(bmi < 18.5){
         System.out.println(" (Underweight)");
