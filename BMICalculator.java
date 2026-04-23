@@ -106,5 +106,9 @@ public static void printBMICategory(double bmi){
     }
 }
 
+//method to print summary
+public static void printSummary(double bmi, double height, double weight){
+	System.out.println();
+}
 
 }
