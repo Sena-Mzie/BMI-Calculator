@@ -115,9 +115,14 @@ public static void printBMICategory(double bmi){
     }
 }
 
-//method to print summary
-public static void printSummary(double bmi, double height, double weight){
-	System.out.println();
+// method print summary
+public static void printSummary(int unitChoice, double weight, double height, double bmi){
+    String unit = (unitChoice == 1) ? "Metric" : "Imperial";
+    System.out.println("\n--- Summary ---");
+    System.out.println("Unit system: " + unit);
+    System.out.println("Weight: " + weight);
+    System.out.println("Height: " + height);
+    System.out.printf("BMI: %.2f\n", bmi);
 }
 
 }
