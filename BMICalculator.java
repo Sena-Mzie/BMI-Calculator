@@ -33,16 +33,16 @@ public static void main(String[] args){
 		
 		double bmi = calculateBMI(unitChoice, weight, height);
 		System.out.print("Your BMI is " + bmi);
-		System.out.print("You are classified as: " + printBMICategory);
-
+		printBMICategory(bmi);
+		
 		//to print summary (new)
-		//Header (new)
+		// Summary Header (new)
         System.out.println("\n==============================");
         System.out.println("       BMI  SUMMARY         ");
         System.out.println("==============================");
 		printSummary(unitChoice, weight, height, bmi);
 
-	//repeat = askToRepeat(sc);
+	repeat = askToRepeat(sc);
 	//System.out.print();
 
 	} while(repeat == 'Y' || repeat == 'y');
@@ -55,7 +55,7 @@ public static void main(String[] args){
 
 	//while loop for selecting unit option
 	while(true){
-		System.out.println("Select a preferred unit: \new"
+		System.out.println("Select a preferred unit: \n"
 		        + "1. Metric (kg, m)\n"
 				+ "2. Imperial (lbs , in)\n"
 				+ "Please select either option 1 or option 2");
@@ -113,13 +113,15 @@ public static double calculateBMI(int unitChoice, double weight, double height){
 //method to print BMI category (as per guidlines)
 public static void printBMICategory(double bmi){
     if(bmi < 18.5){
-        System.out.println(" (Underweight)");
+        System.out.println(" Underweight");
     } else if(bmi < 25 & bmi > 18.5){
-        System.out.println(" (Normal weight)");
+        System.out.println(" Normal weight");
     } else if(bmi < 30 & bmi > 25){
-        System.out.println(" (Overweight)");
-    } else{
-        System.out.println(" (Obese)");
+        System.out.println(" Overweight");
+    } else if(bmi < 35 & bmi > 30){
+        System.out.println(" Obese");
+	}else{
+        System.out.println(" Severly Obese");
     }
 }
 
@@ -131,6 +133,8 @@ public static void printSummary(int unitChoice, double weight, double height, do
     System.out.println("Weight: " + weight);
     System.out.println("Height: " + height);
     System.out.printf("BMI: %.2f\n", bmi);
+	System.out.println("Category: ");
+	printBMICategory(bmi);
 }
 
 }
