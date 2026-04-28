@@ -33,9 +33,14 @@ public static void main(String[] args){
 		
 		double bmi = calculateBMI(unitChoice, weight, height);
 		System.out.print("Your BMI is " + bmi);
+		System.out.print("You are classified as: " + printBMICategory);
 
-		//to print summary
-		printSummary(unitChoice, weight, height, bmi, unit);
+		//to print summary (new)
+		//Header (new)
+        System.out.println("\n==============================");
+        System.out.println("       BMI  SUMMARY         ");
+        System.out.println("==============================");
+		printSummary(unitChoice, weight, height, bmi);
 
 	//repeat = askToRepeat(sc);
 	//System.out.print();
@@ -121,7 +126,7 @@ public static void printBMICategory(double bmi){
 // method print summary (new)
 public static void printSummary(int unitChoice, double weight, double height, double bmi){
     String unit = (unitChoice == 1) ? "Metric" : "Imperial";
-    System.out.println("\n====== Summary =========");
+
     System.out.println("Unit system: " + unit);
     System.out.println("Weight: " + weight);
     System.out.println("Height: " + height);
