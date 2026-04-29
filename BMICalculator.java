@@ -1,3 +1,9 @@
+//java doc comment
+/*
+* @Senamile Mzimela
+* BMI Calculator
+*/
+
 //import packages
 import java.util.Scanner;
 import java.util.Locale;
@@ -11,7 +17,7 @@ public static void main(String[] args){
 	Scanner sc = new Scanner(System.in);
 	sc.useLocale(Locale.US);
 	
-	char repeat = 0;
+	char repeat;
 
 	//Header (new)
     System.out.println("\n==============================");
@@ -36,10 +42,6 @@ public static void main(String[] args){
 		printBMICategory(bmi);
 		
 		//to print summary (new)
-		// Summary Header (new)
-        System.out.println("\n==============================");
-        System.out.println("       BMI  SUMMARY         ");
-        System.out.println("==============================");
 		printSummary(unitChoice, weight, height, bmi);
 
 	repeat = askToRepeat(sc); //calling method to repeat
@@ -47,15 +49,15 @@ public static void main(String[] args){
 	} while(repeat == 'Y' || repeat == 'y');
 
 	//Goodbye (new)
-    System.out.println("\n==============================");
-    System.out.println(" THANK YOU FOR USING OUR CALCULATOR \n");
-	System.out.println(" STAY HEALTHY AND TAKE CARE OF YOUR \n");
-    System.out.println("==============================");
+    System.out.println("\n================================================");
+    System.out.println("    THANK YOU FOR USING OUR BMI CALCULATOR \n");
+	System.out.println("       STAY HEALTHY AND TAKE CARE ");
+    System.out.println("================================================");
 
-	sc.close();
+	sc.close();//new
 }
 
-//method to repeat
+//method to repeat(as per guidlines)
 public static char askToRepeat(Scanner sc){
 	char choice;
 
@@ -131,7 +133,7 @@ public static double calculateBMI(int unitChoice, double weight, double height){
 	if (unitChoice == 1){
 		totalBMI = weight / (height * height);
 	} else{
-		totalBMI = (703 * weight) / (height / height);
+		totalBMI = (703 * weight) / (height * height);
 	}
 	return totalBMI;
 }
@@ -153,14 +155,20 @@ public static void printBMICategory(double bmi){
 
 // method print summary (new)
 public static void printSummary(int unitChoice, double weight, double height, double bmi){
-    String unit = (unitChoice == 1) ? "Metric" : "Imperial";
-
+    
+	// Summary Header (new)
+    System.out.println("\n==============================");
+    System.out.println("       BMI  SUMMARY         ");
+    System.out.println("==============================");
+	
+	String unit = (unitChoice == 1) ? "Metric" : "Imperial";
+	
+	printBMICategory(bmi);
     System.out.println("Unit system: " + unit);
     System.out.println("Weight: " + weight);
     System.out.println("Height: " + height);
     System.out.printf("BMI: %.2f\n", bmi);
-	System.out.println("Category: ");
-	printBMICategory(bmi);
+	
 }
 
 }
