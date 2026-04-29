@@ -43,10 +43,32 @@ public static void main(String[] args){
 		printSummary(unitChoice, weight, height, bmi);
 
 	repeat = askToRepeat(sc);
-	//System.out.print();
+	
 
 	} while(repeat == 'Y' || repeat == 'y');
 
+	sc.close();
+
+}
+
+//method to repeat
+public static char askToRepeat(Scanner sc){
+	char choice;
+
+	//while loop to prompt user
+	while(true){
+		System.out.println("\n Do you want to calculate another BMI? \n" 
+		                    + "('Y' or 'N')" );
+	    choice = sc.nextCharAt(0);
+	
+	//nested if statement to check valid input
+	if(choice == 'Y' || choice == 'y' || choice == 'N' || choice == 'n'){
+		break;
+	} else{
+		System.out.println("Please enter valid input!");
+	}
+	}
+	return choice;
 }
 
 //method to get unit choice, Metric/Imperial
