@@ -42,13 +42,17 @@ public static void main(String[] args){
         System.out.println("==============================");
 		printSummary(unitChoice, weight, height, bmi);
 
-	repeat = askToRepeat(sc);
+	repeat = askToRepeat(sc); //calling method to repeat
 	
-
 	} while(repeat == 'Y' || repeat == 'y');
 
-	sc.close();
+	//Goodbye (new)
+    System.out.println("\n==============================");
+    System.out.println(" THANK YOU FOR USING OUR CALCULATOR \n");
+	System.out.println(" STAY HEALTHY AND TAKE CARE OF YOUR \n");
+    System.out.println("==============================");
 
+	sc.close();
 }
 
 //method to repeat
@@ -59,7 +63,7 @@ public static char askToRepeat(Scanner sc){
 	while(true){
 		System.out.println("\n Do you want to calculate another BMI? \n" 
 		                    + "('Y' or 'N')" );
-	    choice = sc.nextCharAt(0);
+	    choice = sc.next().charAt(0);
 	
 	//nested if statement to check valid input
 	if(choice == 'Y' || choice == 'y' || choice == 'N' || choice == 'n'){
