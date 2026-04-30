@@ -1,6 +1,6 @@
 //java doc comment
 /*
-* @Senamile Mzimela
+* @author Senamile Mzimela
 * BMI Calculator
 */
 
